@@ -5,6 +5,10 @@ public class SavingAccount extends Account {
         this.accountType = AccountType.CHECKING_ACCOUNT;
     }
 
+    
+    /** 
+     * @return double
+     */
     // Create a method to add 10% interest to saving account
     public double addInterest() {
         deposit(this.getAccountBalance() * 0.1);
@@ -12,6 +16,11 @@ public class SavingAccount extends Account {
     }
 
   
+    
+    /** 
+     * @param money
+     * @return boolean
+     */
     // create a method saving account cannot overdraw
     @Override
     public boolean canWithdraw(double money) {
@@ -24,6 +33,11 @@ public class SavingAccount extends Account {
 
     }
 
+    
+    /** 
+     * @param balance
+     * @return double
+     */
     @Override
     public double setAccountBalance(double balance) {
         // TODO Auto-generated method stub

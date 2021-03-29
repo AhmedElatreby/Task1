@@ -5,6 +5,11 @@ public class CheckingAccount extends Account {
         this.accountType = AccountType.CHECKING_ACCOUNT;
     }
 
+    
+    /** 
+     * @param money
+     * @return boolean
+     */
     // set a limet for the amount user can withdraw
     @Override
     protected boolean canWithdraw(double money) {
@@ -16,6 +21,10 @@ public class CheckingAccount extends Account {
         }
     }
 
+    
+    /** 
+     * @return String
+     */
     // create a methos checking account can overdrawn
    
     public String overdrwan() {
@@ -26,6 +35,11 @@ public class CheckingAccount extends Account {
         }
     }
 
+    
+    /** 
+     * @param balance
+     * @return double
+     */
     @Override
     public double setAccountBalance(double balance) {
         // TODO Auto-generated method stub
