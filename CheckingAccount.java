@@ -5,8 +5,7 @@ public class CheckingAccount extends Account {
         this.accountType = AccountType.CHECKING_ACCOUNT;
     }
 
-    
-    /** 
+    /**
      * @param money
      * @return boolean
      */
@@ -21,12 +20,11 @@ public class CheckingAccount extends Account {
         }
     }
 
-    
-    /** 
+    /**
      * @return String
      */
     // create a methos checking account can overdrawn
-   
+
     public String overdrwan() {
         if (this.getAccountBalance() < 0) {
             return String.format("You are £%.2f overdrawn", this.getAccountBalance() * -1);
@@ -35,8 +33,7 @@ public class CheckingAccount extends Account {
         }
     }
 
-    
-    /** 
+    /**
      * @param balance
      * @return double
      */

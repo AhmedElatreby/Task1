@@ -5,8 +5,7 @@ public class SavingAccount extends Account {
         this.accountType = AccountType.CHECKING_ACCOUNT;
     }
 
-    
-    /** 
+    /**
      * @return double
      */
     // Create a method to add 10% interest to saving account
@@ -15,9 +14,7 @@ public class SavingAccount extends Account {
         return balance;
     }
 
-  
-    
-    /** 
+    /**
      * @param money
      * @return boolean
      */
@@ -33,8 +30,7 @@ public class SavingAccount extends Account {
 
     }
 
-    
-    /** 
+    /**
      * @param balance
      * @return double
      */

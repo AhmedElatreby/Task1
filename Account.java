@@ -1,82 +1,88 @@
+/**
+ * Copyright (c) Bournemouth University
+ * 
+ * @author Ahmed El-Atreby
+ * 
+ * @version 1.0
+ */
 // This is the supper class Account
 public abstract class Account implements IAccount {
-    // declare variables
+    // Define all our main data items (attributes)
     private String accountName, accountNumber;
     protected double balance;
     protected AccountType accountType;
 
-    // Constractor methods
+    /**
+     * Constructor method
+     */
     protected Account(String accountName, String accountNumber) {
         this.accountName = accountName;
         this.accountNumber = accountNumber;
     }
 
-    
-    /** 
+    /**
+     * Get the account number of the customer
+     * 
      * @return String
      */
-    // Get the account number of the customer
     @Override
-    public String getAccountNumber() 
-    {
+    public String getAccountNumber() {
         return this.accountNumber;
     }
 
-    
-    /** 
+    /**
+     * create a getter and setter for the account
+     * 
      * @return double
      */
-    // create a getter and setter for the account
     @Override
     public double getAccountBalance() {
         return this.balance;
     }
 
-    
-    /** 
-     * @param balance
+    /**
+     * @param balance set balance
      */
     @Override
     public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    
-    /** 
+    /**
+     * create a deposit method
+     * 
+     * 
      * @param moneyIn
      */
-    // create a deposit method
     public void deposit(double moneyIn) {
         this.balance += moneyIn;
     }
 
-    
-    /** 
+    /**
+     * create method for account type
+     * 
      * @return AccountType
      */
-    // create method for account type
     @Override
-    public AccountType getAccountType()
-    {
+    public AccountType getAccountType() {
         return this.accountType;
     }
 
-    
-    /** 
+    /**
+     * create a method formate for the user
+     * 
      * @return String
      */
-    // create a method formate for the user
     @Override
-    public String getStringBalance()
-    {
-        return String.format("%s%.2f","£", this.balance);
+    public String getStringBalance() {
+        return String.format("%s%.2f", "£", this.balance);
     }
 
-    
-    /** 
+    /**
+     * Method which inform the user of withdrawing money
+     * 
      * @param withdrawMoney
      */
-    // create a withdrow method
     public void withdraw(double withdrawMoney) {
         if (this.canWithdraw(this.balance - withdrawMoney)) {
             System.out.println("You have withdraw money");
@@ -84,16 +90,16 @@ public abstract class Account implements IAccount {
         }
     }
 
-    
-    /** 
-     * @return String
+    /**
+     * Method to get all neccessary info of the customer
+     * 
+     * @return return all account information (String)
      */
-    // Get all neccessary info of the customer
+
     public String accountDetails() {
         return String.format("Customer Name: %s\nAccount Number: %s\nCurrent balance: %s", this.accountName,
                 this.accountNumber, this.balance, this.getStringBalance());
     }
 
     protected abstract boolean canWithdraw(double money);
-
-}
+}// End class Account

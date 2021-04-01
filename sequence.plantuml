@@ -1,0 +1,5 @@
+@startuml Task1
+skinparam Style strictuml
+Class Account : IAccount
+
+@enduml
