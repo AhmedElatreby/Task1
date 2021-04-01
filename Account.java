@@ -5,11 +5,15 @@
  * 
  * @version 1.0
  */
+
 // This is the supper class Account
+// This class implements the IAccount Interface class
+
 public abstract class Account implements IAccount {
+
     // Define all our main data items (attributes)
     private String accountName, accountNumber;
-    protected double balance;
+    protected double balance = 0;
     protected AccountType accountType;
 
     /**
@@ -45,17 +49,24 @@ public abstract class Account implements IAccount {
      */
     @Override
     public void setBalance(double balance) {
+
         this.balance = balance;
+
     }
 
     /**
-     * create a deposit method
-     * 
+     * create a deposit method *
      * 
      * @param moneyIn
      */
-    public void deposit(double moneyIn) {
-        this.balance += moneyIn;
+    public boolean deposit(double moneyIn) {
+        if (moneyIn >= 0) {
+            this.balance += moneyIn;
+        } else {
+            System.err.println("Error message- figure cannot be negative");
+        }
+        return false;
+
     }
 
     /**
@@ -103,3 +114,5 @@ public abstract class Account implements IAccount {
 
     protected abstract boolean canWithdraw(double money);
 }// End class Account
+
+
