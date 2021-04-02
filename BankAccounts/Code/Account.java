@@ -1,3 +1,5 @@
+package BankAccounts.Code;
+
 /**
  * Copyright (c) Bournemouth University
  * 
@@ -27,7 +29,7 @@ public abstract class Account implements IAccount {
     /**
      * Get the account number of the customer
      * 
-     * @return String
+     * @return String account number
      */
     @Override
     public String getAccountNumber() {
@@ -37,7 +39,7 @@ public abstract class Account implements IAccount {
     /**
      * create a getter and setter for the account
      * 
-     * @return double
+     * @return double account balance
      */
     @Override
     public double getAccountBalance() {
@@ -45,10 +47,11 @@ public abstract class Account implements IAccount {
     }
 
     /**
-     * @param balance set balance
+     * @param balance set balance this will display user current balance
      */
     @Override
     public void setBalance(double balance) {
+        System.out.printf("The current balance is £%.2f\n", balance);
 
         this.balance = balance;
 
@@ -58,6 +61,8 @@ public abstract class Account implements IAccount {
      * create a deposit method *
      * 
      * @param moneyIn
+     * @return this will return user depositing money in and will tell user to input
+     *         the correct amount of money
      */
     public boolean deposit(double moneyIn) {
         if (moneyIn >= 0) {
@@ -72,10 +77,11 @@ public abstract class Account implements IAccount {
     /**
      * create method for account type
      * 
-     * @return AccountType
+     * @return this will return the account type
      */
     @Override
     public AccountType getAccountType() {
+        System.out.println("-------------------------------------");
         return this.accountType;
     }
 
@@ -96,9 +102,19 @@ public abstract class Account implements IAccount {
      */
     public void withdraw(double withdrawMoney) {
         if (this.canWithdraw(this.balance - withdrawMoney)) {
-            System.out.println("You have withdraw money");
+            System.out.println("You have withdrawn £" + withdrawMoney);
             this.balance -= withdrawMoney;
         }
+    }
+
+    /**
+     * @param balance
+     * @return double this will return the balance for the user
+     */
+    @Override
+    public void setAccountBalance(double balance) {
+        this.balance = balance;
+
     }
 
     /**
@@ -108,11 +124,9 @@ public abstract class Account implements IAccount {
      */
 
     public String accountDetails() {
-        return String.format("Customer Name: %s\nAccount Number: %s\nCurrent balance: %s", this.accountName,
+        return String.format("Customer Name: %s%nAccount Number: %s%nThe current balance is: £%.2f", this.accountName,
                 this.accountNumber, this.balance, this.getStringBalance());
     }
 
     protected abstract boolean canWithdraw(double money);
 }// End class Account
-
-

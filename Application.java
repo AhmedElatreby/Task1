@@ -1,3 +1,6 @@
+import BankAccounts.Code.CheckingAccount;
+import BankAccounts.Code.SavingAccount;
+
 /**
  * PURPOSE OF PROJECT: The Bank offers its customers two types of account – a
  * Checking Account and a Savings Account. A Checking Account can be overdrawn
@@ -20,43 +23,44 @@ public class Application {
 
         // Test the Checking Account class
         CheckingAccount checking = new CheckingAccount("Ahmed El-Atreby", "696969");
-        System.out.println("-----------------------------------------");
-        
+
         // Declaring account type
         System.out.println("This is the " + checking.getAccountType());
-
         // add £100 to the checking account
         checking.setBalance(100);
 
         // Display account details
         System.out.println(checking.accountDetails());
 
-        // Displaying saving account balance
+        // Displaying Ckecking account balance
         System.out.println(checking.getStringBalance());
 
-        // withdraw £3050
-        checking.withdraw(50);
+        // withdraw £150
+        checking.withdraw(150);
 
         // Declare user withdwan money
-        System.out.println(checking.overdrwan());
+        System.out.println(checking.overdrawn());
 
-        // declear user deposit £300
-        checking.deposit(-300);
+        // declear user deposit £200
+        checking.deposit(200);
 
-        // Displaying saving account balance
+        // Displaying Ckecking account balance
         System.out.println(checking.getStringBalance());
 
         // Declare user withdwan money
-        System.out.println(checking.overdrwan());
+        System.out.println(checking.overdrawn());
 
-        // Test the Savings Account class
+        /*
+         * testing saving account
+         */
+        // Create Savings Account class object
         SavingAccount saving = new SavingAccount("Ahmed El-Atreby", "5002658");
-        System.out.println("-----------------------------------------");
 
-        System.out.println("This is the " + saving.getAccountType()+"\n");
+        // declear account type
+        System.out.println("This is the " + saving.getAccountType());
 
         // add £100 to the checking account
-        saving.setBalance(0);
+        saving.setBalance(10);
 
         // Display account details
         System.out.println(saving.accountDetails());
@@ -70,8 +74,7 @@ public class Application {
         // Displaying saving account balance
         System.out.println(saving.getStringBalance());
 
-        // withdraw £3050
+        // withdraw £1000
         saving.withdraw(1000);
-        System.out.println("-----------------------------------------");
     }
-}
+}// End class Application
