@@ -51,7 +51,7 @@ public abstract class Account implements IAccount {
      */
     @Override
     public void setBalance(double balance) {
-        System.out.printf("The current balance is £%.2f\n", balance);
+        System.out.printf("The current balance is £%.2f%n", balance);
 
         this.balance = balance;
 
@@ -92,7 +92,7 @@ public abstract class Account implements IAccount {
      */
     @Override
     public String getStringBalance() {
-        return String.format("%s%.2f", "£", this.balance);
+        return String.format("£%.2f%n", this.balance);
     }
 
     /**
@@ -102,7 +102,7 @@ public abstract class Account implements IAccount {
      */
     public void withdraw(double withdrawMoney) {
         if (this.canWithdraw(this.balance - withdrawMoney)) {
-            System.out.println("You have withdrawn £" + withdrawMoney);
+            System.out.println(String.format("You have withdrawn: " + "£%.2f", withdrawMoney));
             this.balance -= withdrawMoney;
         }
     }
