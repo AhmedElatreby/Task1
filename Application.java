@@ -35,20 +35,23 @@ public class Application {
         // Displaying Ckecking account balance
         System.out.println(checking.getStringBalance());
 
-        // withdraw £150
-        checking.withdraw(150);
+        // withdraw £50
+        checking.withdraw(50);
 
         // Declare user withdwan money
         System.out.println(checking.overdrawn());
 
-        // declear user deposit £200
-        checking.deposit(200);
+        // declear user deposit £300
+        checking.deposit(300);
 
         // Displaying Ckecking account balance
         System.out.println(checking.getStringBalance());
 
         // Declare user withdwan money
-        System.out.println(checking.overdrawn());
+        // System.out.println(checking.overdrawn());
+
+        // Displaying Ckecking account balance
+        // System.out.println(checking.getStringBalance());
 
         /*
          * testing saving account
@@ -66,7 +69,7 @@ public class Application {
         System.out.println(saving.accountDetails());
 
         // Displaying saving account balance
-        System.out.println(saving.getStringBalance());
+        // System.out.println(saving.getStringBalance());
 
         // add interest
         saving.addInterest();

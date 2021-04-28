@@ -92,7 +92,7 @@ public abstract class Account implements IAccount {
      */
     @Override
     public String getStringBalance() {
-        return String.format("£%.2f%n", this.balance);
+        return String.format("The current balance is: " + "£%.2f", this.balance);
     }
 
     /**
